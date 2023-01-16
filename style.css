@@ -1,50 +1,50 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    margin: 0;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
-    font-size: 6vmin;
-    color: black;
-    letter-spacing: 1vmin;
+  font-size: 6vmin;
+  color: black;
+  letter-spacing: 1vmin;
 }
 
 h1 {
-    color: black;
-    font-size: 3vmin;
+  color: black;
+  font-size: 3vmin;
 }
 
 #board {
-    display: grid;
-    grid-template-columns: repeat(3, 10vmin);
-    grid-template-rows: repeat(3, 10vmin);
-    gap: 1vmin;
-    margin-top: 3vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 10vmin);
+  grid-template-rows: repeat(3, 10vmin);
+  gap: 1vmin;
+  margin-top: 3vmin;
 }
 
 #board > div {
-    border: 0.1vmin solid black;
+  border: 0.1vmin solid black;
 }
 
 button {
-    margin-top: 6vmin;
-    padding: 2vmin;
-    font-size: 3vmin;
-    border-radius: 3vmin;
-    border: 0.3vmin solid black;
+  margin-top: 6vmin;
+  padding: 2vmin;
+  font-size: 3vmin;
+  border-radius: 3vmin;
+  border: 0.3vmin solid black;
 }
 
 button:hover {
-    color: white;
-    background-color: black;
-    border-color: white;
+  color: white;
+  background-color: black;
+  border-color: white;
 }
