@@ -2,8 +2,8 @@
 
 const SYMBOLS = {
     '0': '',
-    '1': 'X',
-    '-1': 'O'
+    '1': '☠️',
+    '-1': '💀'
 };
 
 /*----- state variables -----*/
@@ -16,9 +16,12 @@ let winner; // null = no winner, 1 || -1 = winner, 'T' = tie game
 
 const messageEl = document.querySelector('h1');
 const playAgainBtn = document.querySelector('button');
+const sqEls = [...document.querySelectorAll('.squares > div')];
 
 /*----- event listeners -----*/
 
+document.getElementById('board').addEventListener('click', moveDrop);
+playAgainBtn.addEventListener('click', init);
 
 /*----- functions -----*/
 
@@ -41,7 +44,7 @@ function init() {
 function render() {
     renderBoard();
     renderMessage();
-    renderControls();
+    playAgainBtn.disabled = !winner;
 }
 
 function renderBoard() {
@@ -66,5 +69,20 @@ function renderMessage() {
 
 function renderControls() {
     playAgainBtn.style.visibility = winner ? 'visible' : 'hidden';
+
+}
+
+function moveDrop(evt) {
+    const colIdx = sqEls.indexOf(evt.target);
+    if (colIdx === -1) return;
+    const colArr = board[colIdx];
+    const rowIdx = colArr.indexOf(0);
+    colArr[rowIdx] = turn;
+    turn *= -1;
+    winner = getWinner();
+    render();
+}
+
+function getWinner() {
 
 }
